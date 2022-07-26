@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Node module &#8212; b tree  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Tree module" href="Tree.html" />
+    <link rel="prev" title="Main module" href="Main.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-Node">
+<span id="node-module"></span><h1>Node module<a class="headerlink" href="#module-Node" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="Node.Node">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Node.</span></span><span class="sig-name descname"><span class="pre">Node</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">leaf</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Node.Node" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Node.Node.exists_key">
+<span class="sig-name descname"><span class="pre">exists_key</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">searching_key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Node.Node.exists_key" title="Permalink to this definition">¶</a></dt>
+<dd><p>permet de rechercher la clé fournie en paramètre.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>searching_key</strong> – (int) clé que l’on cherche</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True si la clé existe dans le noeud (ou dans ses enfants), False sinon.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Node.Node.insert">
+<span class="sig-name descname"><span class="pre">insert</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tree</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Node.Node.insert" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fonction d’insertion permettant d’ajouter la clé dans un noeud ou dans son noeud enfant selon la structure du noeud avant insertion</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> – (int) clé qu’on veut insérer dans le noeud</p></li>
+<li><p><strong>tree</strong> – (Tree) arbre</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>False si la taille des clés du noeud (concerné par l’ajout de la valeur) est inférieure au nombre d’enfants maximal de l’arbre en paramètre, True sinon.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Node.Node.keyIndex">
+<span class="sig-name descname"><span class="pre">keyIndex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Node.Node.keyIndex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retourne un index permettant de pouvoir placer la clé au bon endroit dans le tableau keys</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>key</strong> – (int) clé à trier</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(int) index du tableau où mettre la clé dans le tableau keys</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Node.Node.toString">
+<span class="sig-name descname"><span class="pre">toString</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Node.Node.toString" title="Permalink to this definition">¶</a></dt>
+<dd><p>affiche tous les attributs du noeud ainsi que celui de tout ses noeuds enfants : parent, leaf, keys, et childrens sous ce format :</p>
+<p>parent node : (noeud)</p>
+<p>keys of parent node : (tableau de clés du noeud parent)</p>
+<p>leaf: (booléen : True | False)</p>
+<p>keys: (tableau de clés du noeud affiché)</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">b tree</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">ProjetL3S6_fathallah_rouabah</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Main.html">Main module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Node module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tree.html">Tree module</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">ProjetL3S6_fathallah_rouabah</a><ul>
+      <li>Previous: <a href="Main.html" title="previous chapter">Main module</a></li>
+      <li>Next: <a href="Tree.html" title="next chapter">Tree module</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022, walid rouabah & mohamed-amine fathallah.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.5.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/Node.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

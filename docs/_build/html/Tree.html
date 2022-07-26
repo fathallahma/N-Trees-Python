@@ -1,0 +1,205 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Tree module &#8212; b tree  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Node module" href="Node.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-Tree">
+<span id="tree-module"></span><h1>Tree module<a class="headerlink" href="#module-Tree" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="Tree.Tree">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Tree.</span></span><span class="sig-name descname"><span class="pre">Tree</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">L</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">U</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Tree.Tree" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Tree.Tree.exists_key">
+<span class="sig-name descname"><span class="pre">exists_key</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Tree.Tree.exists_key" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tree.Tree.initGraph">
+<span class="sig-name descname"><span class="pre">initGraph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">G</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Tree.Tree.initGraph" title="Permalink to this definition">¶</a></dt>
+<dd><p>Permet d’initialiser le graphe networkx en créant les noeuds et arêtes du graphe, grâce aux noeuds de l’arbre.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>G</strong> – (nx.Graph) Graphe à initialiser</p></li>
+<li><p><strong>node</strong> – (Node) noeud à partir du quel on veut initialiser le graphe</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tree.Tree.insert">
+<span class="sig-name descname"><span class="pre">insert</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Tree.Tree.insert" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ajoute la clé à l’emplacement convenu de l’arbre B</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>key</strong> – (int) clé à ajouter à l’arbre</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tree.Tree.insertKeys">
+<span class="sig-name descname"><span class="pre">insertKeys</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keys</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Tree.Tree.insertKeys" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ajoute les clés à l’emplacement convenu de l’arbre B</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>keys</strong> – (list) clés à ajouter à l’arbre</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tree.Tree.print_tree">
+<span class="sig-name descname"><span class="pre">print_tree</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Tree.Tree.print_tree" title="Permalink to this definition">¶</a></dt>
+<dd><p>affiche toute la structure de l’arbre sous le format :</p>
+<p>Level [hauteur du noeud] : [taille du tableau de clés du noeud] : [tableau de clés du noeud]</p>
+<p>Un noeud de hauteur 0 sera la racine et la valeur s’incrémentera de 1 selon la profondeur du noeud.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>node</strong> – (Node) noeud à partir du quel on veut afficher les caractéristiques de l’arbre</p></li>
+<li><p><strong>l</strong> – (int) hauteur du noeud</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tree.Tree.split">
+<span class="sig-name descname"><span class="pre">split</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Tree.Tree.split" title="Permalink to this definition">¶</a></dt>
+<dd><p>Traite un noeud qui a un nombre de clés supérieurs à l’attribut nbChildMax en le divisant et en créant 1 ou 2 noeuds selon la situation (racine -&gt; 2 sinon 1)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>node</strong> – (Node) Noeud concerncé par le traitement de l’arbre</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tree.Tree.toGraph">
+<span class="sig-name descname"><span class="pre">toGraph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tree.Tree.toGraph" title="Permalink to this definition">¶</a></dt>
+<dd><p>Permet d’afficher le graphe grâce à networkx et matplotlib</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tree.Tree.toStringAllNodes">
+<span class="sig-name descname"><span class="pre">toStringAllNodes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Tree.Tree.toStringAllNodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>affiche tout les attributs du noeud choisi ainsi que celui de tout ses noeuds enfants en utilisant la méthode toString() de Node de manière récursive</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>node</strong> – noeud dont on veut afficher les attributs (dont ceux de ses enfants)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">b tree</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">ProjetL3S6_fathallah_rouabah</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Main.html">Main module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Node.html">Node module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Tree module</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">ProjetL3S6_fathallah_rouabah</a><ul>
+      <li>Previous: <a href="Node.html" title="previous chapter">Node module</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022, walid rouabah & mohamed-amine fathallah.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.5.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/Tree.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
